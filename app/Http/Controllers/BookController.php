@@ -37,7 +37,11 @@ class BookController extends Controller
     public function store(Request $request)
     {
         // validation 
-        
+        $request->validate([
+            'title' => 'required|string|max:100',
+            'desc' => 'required|string',
+        ]);
+
         Book::create([
             'title' => $request->title,
             'desc' => $request->desc,
@@ -59,7 +63,11 @@ class BookController extends Controller
     public function update(Request $request, $id)
     {
         // validation 
-        
+        $request->validate([
+            'title' => 'required|string|max:100',
+            'desc' => 'required|string',
+        ]);
+
         Book::findOrFail($id)->update([
             'title' => $request->title,
             'desc' => $request->desc,
