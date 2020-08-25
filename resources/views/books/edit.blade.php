@@ -8,7 +8,7 @@
 
 @include('inc.errors')
 
-<form method="POST" action="{{ route('books.update', $book->id) }}">
+<form method="POST" action="{{ route('books.update', $book->id) }}" enctype="multipart/form-data">
 
   @csrf
 
@@ -19,6 +19,11 @@
  
   <div class="form-group">
     <textarea class="form-control" name="desc" rows="3" placeholder="description">{{ old('desc') ?? $book->desc }}</textarea>
+  </div>
+
+  
+  <div class="form-group">
+    <input type="file" class="form-control-file" name="img">
   </div>
 
   <button type="submit" class="btn btn-primary">Submit</button>
