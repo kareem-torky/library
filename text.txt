@@ -1,0 +1,33 @@
+model relationships:
+
+1- types of re 
+2- migrations for re 
+3- models 
+4- blade & controllers re
+
+
+1-1
+users 
+phones
+user hasOne phone 
+phone belongsTo one user
+
+
+1-*
+users 
+posts
+user hasMany posts 
+post belongsTo one user
+
+
+*-*
+users
+roles 
+
+user belongsToMany roles 
+role belongsToMany users
+
+
+*-* (many to many)
+categories (name)
+books 

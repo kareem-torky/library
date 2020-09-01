@@ -35,3 +35,23 @@ Route::post('/books/update/{id}', 'BookController@update')->name('books.update')
 
 // Books:delete 
 Route::get('/books/delete/{id}', 'BookController@delete')->name('books.delete');
+
+
+
+// Categories:read 
+Route::get('/categories', 'CategoryController@index')->name('categories.index');
+
+Route::get('/categories/show/{id}', 'CategoryController@show')->name('categories.show');
+
+// Categories:create 
+Route::get('/categories/create', 'CategoryController@create')->name('categories.create');
+
+Route::post('/categories/store', 'CategoryController@store')->name('categories.store');
+
+// Categories:update
+Route::get('/categories/edit/{id}', 'CategoryController@edit')->name('categories.edit');
+
+Route::post('/categories/update/{id}', 'CategoryController@update')->name('categories.update');
+
+// Categories:delete 
+Route::get('/categories/delete/{id}', 'CategoryController@delete')->name('categories.delete');
