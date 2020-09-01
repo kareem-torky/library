@@ -18,7 +18,7 @@ class CreateUsersTable extends Migration
 
             $table->string('name', 100);
             $table->string('email', 100);
-            $table->string('pass', 255);
+            $table->string('password', 255);
             $table->boolean('is_admin')->default(0);
             $table->string('access_token', 64)->nullable();
 

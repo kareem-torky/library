@@ -21,18 +21,51 @@ class AuthController extends Controller
         $request->validate([
             'name' => 'required|string|max:100',
             'email' => 'required|email|max:100',
-            'pass' => 'required|string|max:50|min:5',
+            'password' => 'required|string|max:50|min:5',
         ]);
 
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
-            'pass' => Hash::make($request->pass),
+            'password' => Hash::make($request->password),
         ]);
 
         // login 
         Auth::login($user);
 
         return redirect( route('books.index') );
+    }
+
+    public function login()
+    {
+        return view(
+            'auth.login'
+        );
+    }
+
+    public function handleLogin(Request $request)
+    {
+        $request->validate([
+            'email' => 'required|email|max:100',
+            'password' => 'required|string|max:50|min:5',
+        ]);
+
+        // dd($request->password);
+        $is_login = Auth::attempt(['email' => $request->email, 'password' => $request->password]);
+
+
+        if(! $is_login) 
+        {
+            return back();
+        }
+
+        return redirect( route('books.index') );
+    }
+
+    public function logout()
+    {
+        Auth::logout();
+
+        return back();
     }
 }
