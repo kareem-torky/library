@@ -33,3 +33,8 @@ categories (name)
 books 
 
 book_category
+
+
+/register AuthController@register 
+
+return view --> form

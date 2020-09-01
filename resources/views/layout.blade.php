@@ -26,6 +26,13 @@
           <a class="nav-link" href="{{ route('categories.index') }}">Categories</a>
         </li>
       </ul>
+
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="{{ route('auth.register') }}">Register</a>
+        </li>
+
+      </ul>
     </div>
   </nav>
   

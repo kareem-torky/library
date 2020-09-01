@@ -55,3 +55,10 @@ Route::post('/categories/update/{id}', 'CategoryController@update')->name('categ
 
 // Categories:delete 
 Route::get('/categories/delete/{id}', 'CategoryController@delete')->name('categories.delete');
+
+
+// Authentication 
+
+// register
+Route::get('/register', 'AuthController@register')->name('auth.register');
+Route::post('/handle-register', 'AuthController@handleRegister')->name('auth.handleRegister');
