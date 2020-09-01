@@ -38,3 +38,12 @@ book_category
 /register AuthController@register 
 
 return view --> form
+
+
+IsGuest 
+
+! Auth::check
+
+kernel.php
+
+apply middleware on login and register routes

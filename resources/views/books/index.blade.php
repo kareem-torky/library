@@ -8,7 +8,9 @@
 
 <h1>All books</h1>
 
+{{-- @auth --}}
 <a class="btn btn-primary" href="{{ route('books.create') }}">Create</a>
+{{-- @endauth --}}
 
 @foreach($books as $book)
 
@@ -19,7 +21,11 @@
 
 <p>{{ $book->desc }}</p>
 
-<a class="btn btn-danger" href="{{ route('books.delete', $book->id) }}">Delete</a>
+@auth
+  @if(Auth::user()->is_admin == 1)
+    <a class="btn btn-danger" href="{{ route('books.delete', $book->id) }}">Delete</a>
+  @endif
+@endauth
 
 @endforeach
 
