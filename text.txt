@@ -31,3 +31,5 @@ role belongsToMany users
 *-* (many to many)
 categories (name)
 books 
+
+book_category
