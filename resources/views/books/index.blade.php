@@ -6,11 +6,23 @@
 
 @section('content')
 
+@auth 
+
+<h1>Notes:</h1>
+@foreach(Auth::user()->notes as $note)
+  <p>{{ $note->content }}</p>
+@endforeach
+
+<a href="{{ route('notes.create') }}" class="btn btn-info">Add new note</a>
+
+@endauth
+
+
 <h1>All books</h1>
 
-{{-- @auth --}}
+@auth
 <a class="btn btn-primary" href="{{ route('books.create') }}">Create</a>
-{{-- @endauth --}}
+@endauth
 
 @foreach($books as $book)
 

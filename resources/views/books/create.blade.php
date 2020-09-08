@@ -25,6 +25,17 @@
     <input type="file" class="form-control-file" name="img">
   </div>
 
+  Select Categories: 
+  @foreach ($categories as $category)      
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" name="category_ids[]" value="{{ $category->id }}" id="defaultCheck1">
+      <label class="form-check-label" for="defaultCheck1">
+        {{ $category->name }}
+      </label>
+    </div>
+  @endforeach
+
+  <br>
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 @endsection

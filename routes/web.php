@@ -45,6 +45,8 @@ Route::middleware('isLogin')->group(function(){
     // logout 
     Route::get('/logout', 'AuthController@logout')->name('auth.logout');
 
+    Route::get('/notes/create', 'NoteController@create')->name('notes.create');
+    Route::post('/notes/store', 'NoteController@store')->name('notes.store');
 });
 
 Route::middleware('isLoginAdmin')->group(function(){

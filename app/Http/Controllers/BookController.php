@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Book;
+use App\Category;
 
 class BookController extends Controller
 {
@@ -29,8 +30,10 @@ class BookController extends Controller
 
     public function create()
     {
+        $categories = Category::select('id', 'name')->get();
         return view(
-            'books.create'
+            'books.create',
+            compact('categories')
         );
     }
 
@@ -41,6 +44,8 @@ class BookController extends Controller
             'title' => 'required|string|max:100',
             'desc' => 'required|string',
             'img' => 'required|image|mimes:jpg,png',
+            'category_ids' => 'required',
+            'category_ids.*' => 'exists:categories,id',
         ]);
 
         // move 
@@ -49,11 +54,13 @@ class BookController extends Controller
         $name = "book-". uniqid() . ".$ext";
         $img->move( public_path('uploads/books') , $name);
 
-        Book::create([
+        $book = Book::create([
             'title' => $request->title,
             'desc' => $request->desc,
             'img' => $name
         ]);
+
+        $book->categories()->sync($request->category_ids);
 
         return redirect( route('books.index') );
     }
