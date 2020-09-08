@@ -1,24 +1,12 @@
-CRUD
-file upload 
-validation
+API 
+application program interface 
 
-model relationships
 
-authentication
-1- social media login
+interface 
 
-2- API & token-based authentication 
+1- mobile app. (api)
+2- spa 
+3- share data
 
-3- AJAX
+JSON
 
-sign with github 
-
-1- composer require laravel/socialite
-2- create app on github
-3- in .env add id and secret
-4- in config/services.php
-5- add two routes
-6- add two methods in AuthController
-7- edit callback
-8- test using btn
-<a href="{{ route('auth.github.redirect') }}" class="btn btn-success">Sign up with github</a>
