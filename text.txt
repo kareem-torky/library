@@ -14,4 +14,25 @@ users
 access_token 
 
 
+token 
+
+CORS attack
+
+api 
+api --> domain
+
+6 --> middleware
+7 -->
+
 FV6dMUqpJRsc9ghoX73vp7YgJMy977S7S4sbg39ATSnMZPuzceTZLCXSXCSsjEMz
+
+isApiUser
+
+1- اتاكد انه باعت توكين اصلا
+2- اتاكد ان قيمتها مش فاضية
+3- اتاكد انها موجودة فى الداتابيز
+
+return $next($request)
+
+لو فيه واحد منهم مش متحقق
+token not correct

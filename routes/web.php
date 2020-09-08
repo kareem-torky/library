@@ -75,6 +75,7 @@ Route::middleware('isGuest')->group(function(){
 
 // Books:read 
 Route::get('/books', 'BookController@index')->name('books.index');
+Route::get('/books/search', 'BookController@search')->name('books.search');
 
 Route::get('/books/show/{id}', 'BookController@show')->name('books.show');
 

@@ -10,12 +10,20 @@ class BookController extends Controller
 {
     public function index()
     {
-        $books = Book::orderBy('id', 'DESC')->paginate(3);
+        $books = Book::orderBy('id', 'DESC')->get();
 
         return view(
             'books.index',  
             compact('books')
         );
+    }
+
+    public function search(Request $request)
+    {
+        $keyword = $request->keyword;
+        $books = Book::where('title', 'like', "%$keyword%")->get();
+
+        return response()->json($books);
     }
 
     public function show($id)
