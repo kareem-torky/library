@@ -10,4 +10,7 @@ Route::post('/books/store', 'ApiBookController@store');
 Route::post('/books/update/{id}', 'ApiBookController@update');
 Route::get('/books/delete/{id}', 'ApiBookController@delete');
 
-// /books/show/{id}
+// login/register 
+Route::post('/handle-register', 'ApiAuthController@handleRegister');
+Route::post('/handle-login', 'ApiAuthController@handleLogin');
+Route::post('/logout', 'ApiAuthController@logout');
