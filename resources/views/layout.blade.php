@@ -14,6 +14,7 @@
 
   <x-navbar></x-navbar>
   
+  
   <div class="container py-5">
     @yield('content')
   </div>

@@ -2,6 +2,6 @@ php artisan make:component Navbar
 
 edit app/Views/Components/Navbar
 
-edit views/component
+edit views/component/navbar
 
 <x-navbar></x-navbar>

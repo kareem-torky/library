@@ -8,6 +8,12 @@
 
 @include('inc.errors')
 
+<?php $my_msg = "hello"; ?>
+
+<x-alert msg="this is success message" type="success"></x-alert>
+<x-alert :msg="$my_msg" type="danger"></x-alert>
+<x-alert msg="this is anotttther" type="info"></x-alert>
+
 <form method="POST" action="{{ route('books.store') }}" enctype="multipart/form-data">
 
   @csrf
