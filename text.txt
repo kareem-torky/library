@@ -1,38 +1,7 @@
-API 
-application program interface 
+php artisan make:component Navbar
 
+edit app/Views/Components/Navbar
 
-interface 
+edit views/component
 
-1- mobile app. (api)
-2- spa 
-3- share data
-
-JSON
-
-users 
-access_token 
-
-
-token 
-
-CORS attack
-
-api 
-api --> domain
-
-6 --> middleware
-7 -->
-
-FV6dMUqpJRsc9ghoX73vp7YgJMy977S7S4sbg39ATSnMZPuzceTZLCXSXCSsjEMz
-
-isApiUser
-
-1- اتاكد انه باعت توكين اصلا
-2- اتاكد ان قيمتها مش فاضية
-3- اتاكد انها موجودة فى الداتابيز
-
-return $next($request)
-
-لو فيه واحد منهم مش متحقق
-token not correct
+<x-navbar></x-navbar>
