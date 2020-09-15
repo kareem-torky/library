@@ -6,12 +6,14 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link" href="{{ route('books.index') }}">Books</a>
+          <a class="nav-link" href="{{ route('books.index') }}">
+            @lang('site.books')
+          </a>
         </li>
 
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Categories
+            @lang('site.cats')
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
             @foreach ($cats as $cat)  
@@ -36,7 +38,7 @@
             <a class="nav-link disabled" href="#">{{ Auth::user()->name }}</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{ route('auth.logout') }}">Logout</a>
+            <a class="nav-link" href="{{ route('auth.logout') }}">@lang('site.logout')</a>
           </li>
         @endauth
       </ul>

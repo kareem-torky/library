@@ -1,7 +1,8 @@
-php artisan make:component Navbar
+localization:
 
-edit app/Views/Components/Navbar
+1- lang folder (ملفات الترجمة)
+2- ازاى نحدد اللغة من ملفات الكونفيج
+3- ازاى نعمل بوتونز لتغيير اللغة (بتظبط الكونفيج لليوزر الحالى وبتخزن اللغة فى السيشن)
+4- middleware (تظبط اللغة على اللى العميل عايزه فى كل الصفحات)
 
-edit views/component/navbar
 
-<x-navbar></x-navbar>
