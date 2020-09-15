@@ -88,3 +88,6 @@ Route::get('/categories/show/{id}', 'CategoryController@show')->name('categories
 
 Route::get('login/github', 'AuthController@redirectToProvider')->name('auth.github.redirect');
 Route::get('login/github/callback', 'AuthController@handleProviderCallback')->name('auth.github.callback');
+
+Route::get('/lang/ar', 'LangController@ar')->name('lang.ar');
+Route::get('/lang/en', 'LangController@en')->name('lang.en');
